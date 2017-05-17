@@ -16,7 +16,7 @@ namespace Poznamky
         //Globální proměnné pro uložení textu z NameTextBox & NoteTextBox
         private string name;
         private string noteText;
-        private DB db = new DB();
+        private DB db = new DB(); 
 
         //ArrayList pro uložení poznámek načtených z tlačítka SendNote_Button
         ArrayList notes = new ArrayList();
