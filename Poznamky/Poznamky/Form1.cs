@@ -15,108 +15,87 @@ namespace Poznamky
     {
         //Globální proměnné pro uložení textu z NameTextBox & NoteTextBox
         private string name;
-        private string note;
-        ArrayList poznamky = new ArrayList();
+        private string noteText;
+        
+        //ArrayList pro uložení poznámek načtených z tlačítka SendNote_Button
+        ArrayList notes = new ArrayList();
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void NameTextBox_TextChanged(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e)
         {
+            //Při načtení formu se schová tlačítko pro smazání a smazání všeho
+            DeleteNote_Button.Visible = false;
+            DeleteAllNotes_Button.Visible = false;
+        }
+
+        private void NameTextBox_TextChanged(object sender, EventArgs e)
+        {   
+            //Zapisuje text napsaný do NameTextBox-u do proměnné name
             name = NameTextBox.Text;
         }
 
         private void NoteTextBox_TextChanged(object sender, EventArgs e)
         {
-            note = NoteTextBox.Text;
+            //Zapisuje text napsaný do NoteTextBox-u do proměnné noteText
+            noteText = NoteTextBox.Text;
         }
 
         private void SendNote_Button_Click(object sender, EventArgs e)
         {
-            Vypsat();
+            addNote();
+            list();
         }
 
-        private void Vypsat()
+        private void list()
         {
-
-        }
-    }
-}
-/*
-    public partial class Form1 : Form {
-        private static String nameText;
-        private static String text;
-        ArrayList poznamky = new ArrayList();
-        
-        public Form1() {
-            InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e) {
-            Button_Smazat.Visible = false;
-            Button_Smazat_Vse.Visible = false;
-            this.label1.MaximumSize = new Size(250, 0);
-            this.label1.AutoSize = true;
-        }
-
-        private void Jmeno_TextBox_TextChanged(object sender, EventArgs e) {
-            nameText = this.Jmeno_TextBox.Text;  
-        }
-
-
-        private void Text_TextBox_TextChanged(object sender, EventArgs e) {
-            text = this.Text_TextBox.Text;
-        }
-
-        private void Button_Pridat_Click(object sender, EventArgs e)
-        {
-            pridatPoznamku();
-            vypsat();
-            Button_Smazat.Visible = true;
-            Button_Smazat_Vse.Visible = true;
-
-        }
-
-        private void Button_Smazat_Click(object sender, EventArgs e) {
-            if(poznamky.Count == 1) {
-                Button_Smazat.Visible = false;
-                Button_Smazat_Vse.Visible = false;
-            }
-
-            for (int i = 0; i < poznamky.Count; i++) {
-                    if (Vypis_ListBox.GetSelected(i)) {
-                        poznamky.RemoveAt(i);
-                    }
-                }
-           
-            vypsat();
-        }
-
-        private void Button_Smazat_Vse_Click(object sender, EventArgs e)
-        {
-            poznamky.Clear();
-            vypsat();
-        }
-
-        private void vypsat()
-        {
+            //Vypíše všechny poznamky uložené v ArrayListu notes
             Poznamka p;
-            Vypis_ListBox.Items.Clear();
-            for (int i = 0; i < poznamky.Count; i++)
+            ShowNote_ListBox.Items.Clear();
+            for (int i = 0; i < notes.Count; i++)
             {
-                p = (Poznamka)poznamky[i];
-                Vypis_ListBox.Items.Add("Jméno: " + p.getName() + "     Obsah: " + p.getText());
+                p = (Poznamka)notes[i];
+                ShowNote_ListBox.Items.Add("Jméno: " + p.getName() + "     Obsah: " + p.getText());
             }
         }
 
-        private void pridatPoznamku()
+        private void addNote()
         {
-            Poznamka poznamka;
-            poznamka = new Poznamka(nameText, text);
-            poznamky.Add(poznamka);
+            //Vytvoří nový objekt Poznamka a přidá ho do ArrayListu
+            Poznamka note;
+            note = new Poznamka(name, noteText);
+            notes.Add(note);
+        }
+
+        private void DeleteNote_Button_Click(object sender, EventArgs e)
+        {
+            //Pokud je v ArrayListu notes poslední poznámka, tak po kliku na tlačítko pro smazání se tyto tlačítka schovají
+            if (notes.Count == 1)
+            {
+                DeleteNote_Button.Visible = false;
+                DeleteAllNotes_Button.Visible = false;
+            }
+
+            //cyklus se opakuje i-krát (velikost ArrayListu notes)
+            for (int i = 0; i < notes.Count; i++)
+            {   
+                //Pokud i-tá poznámka je vybrána uživatelem před tím, než klikl na tlačítko 'Smazat' tak se tato poznámka smaže
+                if (ShowNote_ListBox.GetSelected(i))
+                {
+                    notes.RemoveAt(i);
+                }
+            }
+            list();
+        }
+
+        private void DeleteAllNotes_Button_Click(object sender, EventArgs e)
+        {
+            //Vyprázdní celý ArrayList notes
+            notes.Clear();
+            list();
         }
     }
 }
-*/
