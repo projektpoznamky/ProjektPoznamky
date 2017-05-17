@@ -25,12 +25,18 @@ namespace Poznamky
             InitializeComponent();
         }
 
+
+
         public void Form1_Load(object sender, EventArgs e)
         {
+            DB db = new DB();
             //Při načtení formu se schová tlačítko pro smazání a smazání všeho
             DeleteNote_Button.Visible = false;
             DeleteAllNotes_Button.Visible = false;
         }
+
+
+
 
         private void NameTextBox_TextChanged(object sender, EventArgs e)
         {   
@@ -97,5 +103,6 @@ namespace Poznamky
             notes.Clear();
             list();
         }
+
     }
 }
