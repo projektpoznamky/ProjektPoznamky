@@ -34,6 +34,7 @@
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.NoteTextBox = new System.Windows.Forms.TextBox();
             this.ShowNote_ListBox = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SendNote_Button
@@ -91,11 +92,21 @@
             this.ShowNote_ListBox.Size = new System.Drawing.Size(320, 160);
             this.ShowNote_ListBox.TabIndex = 5;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(326, 449);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(649, 487);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ShowNote_ListBox);
             this.Controls.Add(this.NoteTextBox);
             this.Controls.Add(this.NameTextBox);
@@ -117,6 +128,7 @@
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox NoteTextBox;
         private System.Windows.Forms.ListBox ShowNote_ListBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 

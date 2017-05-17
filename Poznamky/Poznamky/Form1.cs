@@ -16,7 +16,8 @@ namespace Poznamky
         //Globální proměnné pro uložení textu z NameTextBox & NoteTextBox
         private string name;
         private string noteText;
-        
+        private DB db = new DB();
+
         //ArrayList pro uložení poznámek načtených z tlačítka SendNote_Button
         ArrayList notes = new ArrayList();
 
@@ -29,7 +30,8 @@ namespace Poznamky
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            DB db = new DB();
+
+            //db.db_connect(); //volání připojení dtb
             //Při načtení formu se schová tlačítko pro smazání a smazání všeho
             DeleteNote_Button.Visible = false;
             DeleteAllNotes_Button.Visible = false;
@@ -74,7 +76,12 @@ namespace Poznamky
             Poznamka note;
             note = new Poznamka(name, noteText);
             notes.Add(note);
+            db.add_note_db(note);
         }
+
+
+
+
 
         private void DeleteNote_Button_Click(object sender, EventArgs e)
         {
