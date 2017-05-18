@@ -93,6 +93,8 @@ namespace Poznamky
 
             while (reader.Read()){
                 //vypiš vše
+                note = new Poznamka(reader.GetString("id_note"), reader.GetString("name_note"), reader.GetString("text_note"), reader.GetString("date_note"));
+                notes.Add(note); //přidej do array listu
                 ShowNote_ListBox.Items.Add("Jméno: " + reader.GetString("name_note") + "    Obsah: " + reader.GetString("text_note"));
             }
 
@@ -117,7 +119,6 @@ namespace Poznamky
             note = new Poznamka(name, noteText);
             db.add_note_db(note);
             notes.Clear();
-            
             list();
         }
 
