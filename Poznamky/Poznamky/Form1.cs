@@ -27,8 +27,8 @@ namespace Poznamky
         {
             
             InitializeComponent();
-            db.db_connect();
-            list_load();
+            db.db_connect(); //připoj se na dtb
+            list_load(); //načti všechen obsah z dtb
         }
 
 
@@ -60,12 +60,13 @@ namespace Poznamky
 
         private void SendNote_Button_Click(object sender, EventArgs e)
         {
-            addNote();
-            list();
+            addNote(); //přidej do array listu
+            list(); //vypiš
         }
 
         private void list_load()
         {
+            //provádí se na začátku --> načte vše z dtb a vytvoří instance a přidá do array listu notes
             MySqlDataReader reader;
             
             
@@ -73,11 +74,12 @@ namespace Poznamky
 
             while (reader.Read())
             {
+                //vytvoř instanci
                 note = new Poznamka(reader.GetString("id_note"), reader.GetString("name_note"), reader.GetString("text_note"), reader.GetString("date_note"));
-                notes.Add(note);
+                notes.Add(note); //přidej do array listu
                 ShowNote_ListBox.Items.Add("Jméno: " + reader.GetString("name_note") + "    Obsah: " + reader.GetString("text_note"));
             }
-            db.db_close();
+            db.db_close(); //ukončení komunikace s dtb zahájené v db.db_select_notes()
         }
 
 
@@ -85,12 +87,12 @@ namespace Poznamky
 
         private void list()
         {
-            ShowNote_ListBox.Items.Clear();
+            ShowNote_ListBox.Items.Clear(); //vyčisti zobrazené položky
             MySqlDataReader reader;
-            reader = db.db_select_notes();
+            reader = db.db_select_notes(); //získej výpis všeho
 
             while (reader.Read()){
-                
+                //vypiš vše
                 ShowNote_ListBox.Items.Add("Jméno: " + reader.GetString("name_note") + "    Obsah: " + reader.GetString("text_note"));
             }
 

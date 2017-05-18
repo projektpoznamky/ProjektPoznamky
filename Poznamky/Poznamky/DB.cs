@@ -53,9 +53,12 @@ namespace Poznamky
              db_close(); //ukončit dtb    
         }
 
+
+
+
         public MySqlDataReader db_select_notes()
         {
-            db_connect();
+            db_connect(); //připojit se
             command = connection.CreateCommand();
 
            // command.CommandText = "SELECT id_note, name_note, text_note, date_note FROM notes";
@@ -64,7 +67,7 @@ namespace Poznamky
 
             MySqlCommand cmd = new MySqlCommand(select, connection);
            MySqlDataReader reader = cmd.ExecuteReader();
-            //connection.Close();
+            //nesmím zavřít dtb jinak by se nevykonal reader v Form1.cs
             
             return reader;
         }
