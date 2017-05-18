@@ -93,7 +93,7 @@ namespace Poznamky
             //update dané poznámky, předá se mi z formuláře id, jméno a text
             db_connect();
 
-            string update = "UPDATE notes SET name_note = " + name_note + ", text_note =" + text_note + " WHERE id_note =" + id_note;
+            string update = "UPDATE notes SET name_note = '" + name_note + "', text_note ='" + text_note + "' WHERE id_note =" + id_note;
 
             MySqlCommand cmd = new MySqlCommand(update, connection);
 
