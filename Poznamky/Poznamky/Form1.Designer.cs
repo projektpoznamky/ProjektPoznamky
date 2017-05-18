@@ -30,7 +30,6 @@
         {
             this.SendNote_Button = new System.Windows.Forms.Button();
             this.DeleteNote_Button = new System.Windows.Forms.Button();
-            this.DeleteAllNotes_Button = new System.Windows.Forms.Button();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.NoteTextBox = new System.Windows.Forms.TextBox();
             this.ShowNote_ListBox = new System.Windows.Forms.ListBox();
@@ -56,16 +55,6 @@
             this.DeleteNote_Button.Text = "Smazat";
             this.DeleteNote_Button.UseVisualStyleBackColor = true;
             this.DeleteNote_Button.Click += new System.EventHandler(this.DeleteNote_Button_Click);
-            // 
-            // DeleteAllNotes_Button
-            // 
-            this.DeleteAllNotes_Button.Location = new System.Drawing.Point(238, 352);
-            this.DeleteAllNotes_Button.Name = "DeleteAllNotes_Button";
-            this.DeleteAllNotes_Button.Size = new System.Drawing.Size(138, 62);
-            this.DeleteAllNotes_Button.TabIndex = 2;
-            this.DeleteAllNotes_Button.Text = "Smazat vše";
-            this.DeleteAllNotes_Button.UseVisualStyleBackColor = true;
-            this.DeleteAllNotes_Button.Click += new System.EventHandler(this.DeleteAllNotes_Button_Click);
             // 
             // NameTextBox
             // 
@@ -111,7 +100,6 @@
             this.Controls.Add(this.ShowNote_ListBox);
             this.Controls.Add(this.NoteTextBox);
             this.Controls.Add(this.NameTextBox);
-            this.Controls.Add(this.DeleteAllNotes_Button);
             this.Controls.Add(this.DeleteNote_Button);
             this.Controls.Add(this.SendNote_Button);
             this.Name = "Form1";
@@ -126,7 +114,6 @@
 
         private System.Windows.Forms.Button SendNote_Button;
         private System.Windows.Forms.Button DeleteNote_Button;
-        private System.Windows.Forms.Button DeleteAllNotes_Button;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox NoteTextBox;
         private System.Windows.Forms.ListBox ShowNote_ListBox;

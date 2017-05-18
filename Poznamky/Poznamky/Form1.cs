@@ -40,7 +40,6 @@ namespace Poznamky
             //Při načtení formu se schová tlačítko pro smazání a smazání všeho
             
             DeleteNote_Button.Visible = false;
-            DeleteAllNotes_Button.Visible = false;
         }
 
 
@@ -114,7 +113,6 @@ namespace Poznamky
 
         private void addNote()
         {
-            
             //Vytvoří nový objekt Poznamka a přidá ho do ArrayListu
             note = new Poznamka(name, noteText);
             db.add_note_db(note);
@@ -132,27 +130,21 @@ namespace Poznamky
             if (notes.Count == 1)
             {
                 DeleteNote_Button.Visible = false;
-                DeleteAllNotes_Button.Visible = false;
             }
 
-            //cyklus se opakuje i-krát (velikost ArrayListu notes)
-            for (int i = 0; i < notes.Count; i++)
-            {   
-                //Pokud i-tá poznámka je vybrána uživatelem před tím, než klikl na tlačítko 'Smazat' tak se tato poznámka smaže
-                if (ShowNote_ListBox.GetSelected(i))
-                {
-                    notes.RemoveAt(i);
-                }
-            }
+
+            int location = ShowNote_ListBox.SelectedIndex;
+
+                
+            note = (Poznamka)notes[location];
+            int id_note = note.getId();
+            db.db_delete_note(id_note);
+                
+            
             list();
         }
 
-        private void DeleteAllNotes_Button_Click(object sender, EventArgs e)
-        {
-            //Vyprázdní celý ArrayList notes
-            notes.Clear();
-            list();
-        }
+        
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
