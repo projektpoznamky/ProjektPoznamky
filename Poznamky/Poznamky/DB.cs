@@ -88,6 +88,23 @@ namespace Poznamky
         }
 
 
+        public void db_update_note(int id_note, string name_note, string text_note)
+        {
+            //update dané poznámky, předá se mi z formuláře id, jméno a text
+            db_connect();
+
+            string update = "UPDATE notes SET name_note = " + name_note + ", text_note =" + text_note + " WHERE id_note =" + id_note;
+
+            MySqlCommand cmd = new MySqlCommand(update, connection);
+
+            cmd.ExecuteNonQuery();
+
+            db_close();
+
+        }
+        
+
+
 
 
         
