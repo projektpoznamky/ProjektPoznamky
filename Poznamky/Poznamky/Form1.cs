@@ -161,15 +161,22 @@ namespace Poznamky
         private void UpdateNote_Button_Click(object sender, EventArgs e)
         {
             Form_Update form_Update = new Form_Update();
+
+
+
             location = ShowNote_ListBox.SelectedIndex;
-            this.Visible = false;
+            if (location >= 0)
+            {
+                note = (Poznamka)notes[location];
+                form_Update.setId(note.getId());
+                form_Update.setName(note.getName());
+                form_Update.setNote(note.getText());
+                form_Update.Show();
+                this.Visible = false;
 
-            note = (Poznamka)notes[location];
-            int id_note = note.getId();
+            }
 
-            form_Update.setName(note.getName());
-            form_Update.setNote(note.getText());
-            form_Update.Show();
+
         }
 
         
