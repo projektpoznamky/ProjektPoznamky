@@ -36,10 +36,7 @@ namespace Poznamky
 
         public void Form1_Load(object sender, EventArgs e)
         {
-
-            //db.db_connect(); //volání připojení dtb
             //Při načtení formu se schová tlačítko pro smazání a smazání všeho
-            
             DeleteNote_Button.Visible = false;
         }
 
@@ -97,19 +94,6 @@ namespace Poznamky
                 notes.Add(note); //přidej do array listu
                 ShowNote_ListBox.Items.Add("Jméno: " + reader.GetString("name_note") + "    Obsah: " + reader.GetString("text_note"));
             }
-
-
-
-
-
-            /*Vypíše všechny poznamky uložené v ArrayListu notes
-            Poznamka p;
-            ShowNote_ListBox.Items.Clear();
-            for (int i = 0; i < notes.Count; i++)
-            {
-                p = (Poznamka)notes[i];
-                ShowNote_ListBox.Items.Add("Jméno: " + p.getName() + "     Obsah: " + p.getText());
-            }*/
         }
 
         private void addNote()
@@ -179,6 +163,37 @@ namespace Poznamky
 
         }
 
-        
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Close_Button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Close_Button_MouseHover(object sender, EventArgs e)
+        {
+            this.Close_Button.BackColor = Color.Red;
+        }
+
+        private void Close_Button_MouseLeave(object sender, EventArgs e)
+        {
+            this.Close_Button.BackColor = Color.Transparent;
+        }
+
+
     }
-}
+    }
+
