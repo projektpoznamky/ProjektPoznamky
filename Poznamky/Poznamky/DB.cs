@@ -73,6 +73,21 @@ namespace Poznamky
         }
 
 
+        public void db_delete_note(int id_note)
+        {
+            db_connect();
+
+            string delete = "DELETE FROM notes WHERE id_note = " + id_note;
+
+            MySqlCommand cmd = new MySqlCommand(delete, connection);
+            cmd.ExecuteNonQuery();
+
+            db_close();
+
+            
+        }
+
+
 
 
         
