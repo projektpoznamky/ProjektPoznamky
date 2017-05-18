@@ -91,6 +91,7 @@
             this.ShowNote_ListBox.Name = "ShowNote_ListBox";
             this.ShowNote_ListBox.Size = new System.Drawing.Size(320, 160);
             this.ShowNote_ListBox.TabIndex = 5;
+            this.ShowNote_ListBox.SelectedIndexChanged += new System.EventHandler(this.ShowNote_ListBox_SelectedIndexChanged);
             // 
             // label1
             // 

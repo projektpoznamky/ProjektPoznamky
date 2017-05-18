@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,14 +17,18 @@ namespace Poznamky
         //Globální proměnné pro uložení textu z NameTextBox & NoteTextBox
         private string name;
         private string noteText;
-        private DB db = new DB(); 
+        private DB db = new DB();
+        private Poznamka note;
 
         //ArrayList pro uložení poznámek načtených z tlačítka SendNote_Button
         ArrayList notes = new ArrayList();
 
         public Form1()
         {
+            
             InitializeComponent();
+            db.db_connect();
+            list_load();
         }
 
 
@@ -33,6 +38,7 @@ namespace Poznamky
 
             //db.db_connect(); //volání připojení dtb
             //Při načtení formu se schová tlačítko pro smazání a smazání všeho
+            
             DeleteNote_Button.Visible = false;
             DeleteAllNotes_Button.Visible = false;
         }
@@ -58,25 +64,59 @@ namespace Poznamky
             list();
         }
 
+        private void list_load()
+        {
+            MySqlDataReader reader;
+            
+            
+            reader = db.db_select_notes();
+
+            while (reader.Read())
+            {
+                note = new Poznamka(reader.GetString("id_note"), reader.GetString("name_note"), reader.GetString("text_note"), reader.GetString("date_note"));
+                notes.Add(note);
+                ShowNote_ListBox.Items.Add("Jméno: " + reader.GetString("name_note") + "    Obsah: " + reader.GetString("text_note"));
+            }
+            db.db_close();
+        }
+
+
+
+
         private void list()
         {
-            //Vypíše všechny poznamky uložené v ArrayListu notes
+            ShowNote_ListBox.Items.Clear();
+            MySqlDataReader reader;
+            reader = db.db_select_notes();
+
+            while (reader.Read()){
+                
+                ShowNote_ListBox.Items.Add("Jméno: " + reader.GetString("name_note") + "    Obsah: " + reader.GetString("text_note"));
+            }
+
+
+
+
+
+            /*Vypíše všechny poznamky uložené v ArrayListu notes
             Poznamka p;
             ShowNote_ListBox.Items.Clear();
             for (int i = 0; i < notes.Count; i++)
             {
                 p = (Poznamka)notes[i];
                 ShowNote_ListBox.Items.Add("Jméno: " + p.getName() + "     Obsah: " + p.getText());
-            }
+            }*/
         }
 
         private void addNote()
         {
+            
             //Vytvoří nový objekt Poznamka a přidá ho do ArrayListu
-            Poznamka note;
             note = new Poznamka(name, noteText);
-            notes.Add(note);
             db.add_note_db(note);
+            notes.Clear();
+            
+            list();
         }
 
 
@@ -112,6 +152,11 @@ namespace Poznamky
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShowNote_ListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

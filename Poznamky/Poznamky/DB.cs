@@ -16,7 +16,7 @@ namespace Poznamky
 
         public DB()
         {
-            db_connect(); //hned při vytvoření instance se připoj do dtb
+            //db_connect(); //hned při vytvoření instance se připoj do dtb
             
         }
 
@@ -38,7 +38,7 @@ namespace Poznamky
         public void add_note_db(Poznamka note)
         { //přidat novou poznámku do databáze
 
-         //   db_connect(); //pro každý nový příkaz musí být nové připojení do dtb
+            db_connect(); //pro každý nový příkaz musí být nové připojení do dtb
 
             command = connection.CreateCommand(); //zahájit vytváření příkazu
 
@@ -50,27 +50,22 @@ namespace Poznamky
 
             command.ExecuteNonQuery(); //provést
 
-         //   db_close(); //ukončit dtb
-
-           
-                
+             db_close(); //ukončit dtb    
         }
-
-        
-
-
 
         public MySqlDataReader db_select_notes()
         {
-           // command = connection.CreateCommand();
+            db_connect();
+            command = connection.CreateCommand();
 
            // command.CommandText = "SELECT id_note, name_note, text_note, date_note FROM notes";
 
             string select = "SELECT id_note, name_note, text_note, date_note FROM notes";
 
             MySqlCommand cmd = new MySqlCommand(select, connection);
-            MySqlDataReader reader = cmd.ExecuteReader();
-
+           MySqlDataReader reader = cmd.ExecuteReader();
+            //connection.Close();
+            
             return reader;
         }
 
