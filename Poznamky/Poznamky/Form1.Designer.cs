@@ -34,6 +34,7 @@
             this.NoteTextBox = new System.Windows.Forms.TextBox();
             this.ShowNote_ListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.UpdateNote_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SendNote_Button
@@ -48,7 +49,7 @@
             // 
             // DeleteNote_Button
             // 
-            this.DeleteNote_Button.Location = new System.Drawing.Point(238, 284);
+            this.DeleteNote_Button.Location = new System.Drawing.Point(238, 351);
             this.DeleteNote_Button.Name = "DeleteNote_Button";
             this.DeleteNote_Button.Size = new System.Drawing.Size(138, 62);
             this.DeleteNote_Button.TabIndex = 1;
@@ -76,9 +77,9 @@
             // ShowNote_ListBox
             // 
             this.ShowNote_ListBox.FormattingEnabled = true;
-            this.ShowNote_ListBox.Location = new System.Drawing.Point(291, 48);
+            this.ShowNote_ListBox.Location = new System.Drawing.Point(277, 48);
             this.ShowNote_ListBox.Name = "ShowNote_ListBox";
-            this.ShowNote_ListBox.Size = new System.Drawing.Size(320, 160);
+            this.ShowNote_ListBox.Size = new System.Drawing.Size(306, 160);
             this.ShowNote_ListBox.TabIndex = 5;
             this.ShowNote_ListBox.SelectedIndexChanged += new System.EventHandler(this.ShowNote_ListBox_SelectedIndexChanged);
             // 
@@ -91,11 +92,22 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "label1";
             // 
+            // UpdateNote_Button
+            // 
+            this.UpdateNote_Button.Location = new System.Drawing.Point(238, 283);
+            this.UpdateNote_Button.Name = "UpdateNote_Button";
+            this.UpdateNote_Button.Size = new System.Drawing.Size(138, 62);
+            this.UpdateNote_Button.TabIndex = 7;
+            this.UpdateNote_Button.Text = "Aktualizovat";
+            this.UpdateNote_Button.UseVisualStyleBackColor = true;
+            this.UpdateNote_Button.Click += new System.EventHandler(this.UpdateNote_Button_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(649, 487);
+            this.Controls.Add(this.UpdateNote_Button);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ShowNote_ListBox);
             this.Controls.Add(this.NoteTextBox);
@@ -118,6 +130,7 @@
         private System.Windows.Forms.TextBox NoteTextBox;
         private System.Windows.Forms.ListBox ShowNote_ListBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button UpdateNote_Button;
     }
 }
 

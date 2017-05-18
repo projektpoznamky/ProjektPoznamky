@@ -19,6 +19,7 @@ namespace Poznamky
         private string noteText;
         private DB db = new DB();
         private Poznamka note;
+        private int location;
 
         //ArrayList pro uložení poznámek načtených z tlačítka SendNote_Button
         ArrayList notes = new ArrayList();
@@ -133,7 +134,7 @@ namespace Poznamky
             }
 
 
-            int location = ShowNote_ListBox.SelectedIndex;
+            location = ShowNote_ListBox.SelectedIndex;
 
                 
             note = (Poznamka)notes[location];
@@ -153,7 +154,24 @@ namespace Poznamky
 
         private void ShowNote_ListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            location = ShowNote_ListBox.SelectedIndex;
+            label1.Text = location.ToString();
         }
+
+        private void UpdateNote_Button_Click(object sender, EventArgs e)
+        {
+            Form_Update form_Update = new Form_Update();
+            location = ShowNote_ListBox.SelectedIndex;
+            this.Visible = false;
+
+            note = (Poznamka)notes[location];
+            int id_note = note.getId();
+
+            form_Update.setName(note.getName());
+            form_Update.setNote(note.getText());
+            form_Update.Show();
+        }
+
+        
     }
 }
