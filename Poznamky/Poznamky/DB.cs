@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Poznamky
 {
@@ -102,14 +103,70 @@ namespace Poznamky
             db_close();
 
         }
-        
+
+
+        public int db_login(String username, String password)
+        {
+            db_connect();
+
+            string passwd = Hash(password);
+
+            string select_login = "SELECT id_user FROM users WHERE username = " + username + " AND password = " + passwd;
+
+            MySqlCommand cmd = new MySqlCommand(select_login, connection);
+
+            int count = (int)cmd.ExecuteScalar();
+
+            if(count == 1)
+            {
+                int id_user = 0;
+                // cmd.ExecuteNonQuery();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    id_user = int.Parse(reader.GetString("id_user"));
+                }
+                db_close();
+                return id_user;
+
+            }
+            else
+            {
+                db_close();
+                return 0;
+            }
+            
+
+            
+
+
+            
+        }
+
+        public string Hash(string input)
+        {
+            using (SHA1Managed sha1 = new SHA1Managed())
+            {
+                var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(input));
+                var sb = new StringBuilder(hash.Length * 2);
+
+                foreach (byte b in hash)
+                {
+                    // can be "x2" if you want lowercase
+                    sb.Append(b.ToString("X2"));
+                }
+
+                return sb.ToString();
+            }
+        }
 
 
 
 
-        
 
-        
+
+
+
 
     }
 

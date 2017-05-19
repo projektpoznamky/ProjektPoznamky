@@ -255,6 +255,11 @@ namespace Poznamky
             username = usernameTextBox.Text;
         }
 
+        private void Login_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
         {
             password = passwordTextBox.Text;

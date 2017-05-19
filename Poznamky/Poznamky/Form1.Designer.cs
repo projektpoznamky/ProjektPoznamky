@@ -319,6 +319,7 @@
             this.Login_Button.TabIndex = 2;
             this.Login_Button.Text = "Login";
             this.Login_Button.UseVisualStyleBackColor = false;
+            this.Login_Button.Click += new System.EventHandler(this.Login_Button_Click);
             this.Login_Button.MouseHover += new System.EventHandler(this.Login_Button_MouseHover);
             // 
             // panel8
