@@ -50,6 +50,7 @@
             this.ShowNote_ListBox = new System.Windows.Forms.ListBox();
             this.TextLengthCounter = new System.Windows.Forms.Label();
             this.LoginPanel = new System.Windows.Forms.Panel();
+            this.LabelReturn = new System.Windows.Forms.Label();
             this.Login_Button = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
@@ -59,7 +60,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.loginImage = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.LabelReturn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -308,6 +308,16 @@
             this.LoginPanel.Size = new System.Drawing.Size(897, 620);
             this.LoginPanel.TabIndex = 11;
             // 
+            // LabelReturn
+            // 
+            this.LabelReturn.AutoSize = true;
+            this.LabelReturn.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.LabelReturn.Location = new System.Drawing.Point(555, 405);
+            this.LabelReturn.Name = "LabelReturn";
+            this.LabelReturn.Size = new System.Drawing.Size(34, 13);
+            this.LabelReturn.TabIndex = 4;
+            this.LabelReturn.Text = "return";
+            // 
             // Login_Button
             // 
             this.Login_Button.BackColor = System.Drawing.Color.Transparent;
@@ -403,15 +413,6 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(200, 27);
             this.panel10.TabIndex = 1;
-            // 
-            // LabelReturn
-            // 
-            this.LabelReturn.AutoSize = true;
-            this.LabelReturn.Location = new System.Drawing.Point(555, 405);
-            this.LabelReturn.Name = "LabelReturn";
-            this.LabelReturn.Size = new System.Drawing.Size(34, 13);
-            this.LabelReturn.TabIndex = 4;
-            this.LabelReturn.Text = "return";
             // 
             // Form1
             // 

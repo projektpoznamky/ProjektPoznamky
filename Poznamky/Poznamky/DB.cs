@@ -106,65 +106,69 @@ namespace Poznamky
         }
 
 
+
+
+
+
         public int db_login(String username, String password)
         {
+            //přihlášení uživatele
             db_connect();
 
-            string passwd = getSHA1(password);
+            //parametr hesla zahešuj do sha1
+            string passwd = getSHA1(password); 
 
+            //zjisti počet uživatelů s platnými přihlašovacími údaji
+            string select_count = "SELECT COUNT(id_user) AS c FROM users WHERE username = '" + username + "' AND password = '" + passwd + "'";
+
+            //zjisti id uživatele s platnými podmínkami
             string select_login = "SELECT id_user FROM users WHERE username = '" + username + "' AND password = '" + passwd +"'";
 
-            MySqlCommand cmd = new MySqlCommand(select_login, connection);
+            MySqlCommand cmd_count = new MySqlCommand(select_count, connection); //proveď počet
+            MySqlCommand cmd = new MySqlCommand(select_login, connection); //proveď zjištění id
 
-            int count = (int)cmd.ExecuteScalar();
+            int count = 0;
 
+            //kolik je uživatelů se splněním podmínke?
+            MySqlDataReader r = cmd_count.ExecuteReader(); 
+            while (r.Read())
+            {
+                count = int.Parse(r.GetString("c"));
+            }
+
+            r.Close(); //uzavřít MySqlDataReader!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+            //jestli je 1 uživatel s platnými údaji, můžu předat k přihlášení jeho id, jinak se vrátí 0, která nikdy v dtb není (jako id)
             if(count == 1)
             {
                 int id_user = 0;
                 // cmd.ExecuteNonQuery();
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+
+                //jaké je id_user z výběru uživatelů?
+                MySqlDataReader read = cmd.ExecuteReader();
+                while (read.Read())
                 {
-                    id_user = int.Parse(reader.GetString("id_user"));
+                    id_user = int.Parse(read.GetString("id_user"));
                 }
                 db_close();
-                return id_user;
+                return id_user; //předej id
 
             }
             else
             {
                 db_close();
-                return 0;
+                return 0; //předej nulu
             } 
-            
-
-            
-
-
             
         }
 
-      /*  public string Hash(string input)
-        {
-            using (SHA1Managed sha1 = new SHA1Managed())
-            {
-                var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(input));
-                var sb = new StringBuilder(hash.Length * 2);
-
-                foreach (byte b in hash)
-                {
-                    // can be "x2" if you want lowercase
-                    sb.Append(b.ToString("X2"));
-                }
-
-                return sb.ToString();
-            }
-        }*/
+      
 
 
 
         public string getSHA1(string text)
         {
+            //překlad textu na SHA1
             SHA1CryptoServiceProvider sh = new SHA1CryptoServiceProvider();
             sh.ComputeHash(ASCIIEncoding.ASCII.GetBytes(text));
             byte[] re = sh.Hash;
