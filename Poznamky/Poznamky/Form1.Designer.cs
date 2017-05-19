@@ -55,6 +55,7 @@
             // 
             // SendNote_Button
             // 
+            this.SendNote_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.SendNote_Button.Location = new System.Drawing.Point(683, 150);
             this.SendNote_Button.Name = "SendNote_Button";
             this.SendNote_Button.Size = new System.Drawing.Size(138, 62);
@@ -92,10 +93,12 @@
             // 
             // ShowNote_ListBox
             // 
+            this.ShowNote_ListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ShowNote_ListBox.FormattingEnabled = true;
+            this.ShowNote_ListBox.ItemHeight = 15;
             this.ShowNote_ListBox.Location = new System.Drawing.Point(290, 73);
             this.ShowNote_ListBox.Name = "ShowNote_ListBox";
-            this.ShowNote_ListBox.Size = new System.Drawing.Size(306, 160);
+            this.ShowNote_ListBox.Size = new System.Drawing.Size(306, 154);
             this.ShowNote_ListBox.TabIndex = 5;
             this.ShowNote_ListBox.SelectedIndexChanged += new System.EventHandler(this.ShowNote_ListBox_SelectedIndexChanged);
             // 
@@ -126,7 +129,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 606);
+            this.panel1.Size = new System.Drawing.Size(200, 724);
             this.panel1.TabIndex = 8;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -227,7 +230,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(702, 27);
+            this.panel2.Size = new System.Drawing.Size(925, 27);
             this.panel2.TabIndex = 9;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -252,7 +255,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(902, 606);
+            this.ClientSize = new System.Drawing.Size(1125, 724);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.SendNote_Button);
             this.Controls.Add(this.panel1);
