@@ -240,13 +240,7 @@ namespace Poznamky
         {
             this.Close_Button.BackColor = Color.AliceBlue;
 
-            if((username != null && username.Length < 51) && (password != null && password.Length < 41))
-            {
-                //metoda pro login
-            } else
-            {
-                //špatné přihlášení
-            }
+            
 
         }
 
@@ -257,7 +251,23 @@ namespace Poznamky
 
         private void Login_Button_Click(object sender, EventArgs e)
         {
+            int id_user = -1;
+            
 
+            if ((username != null && username.Length < 51) && (password != null && password.Length < 41))
+            {
+                id_user = db.db_login(username, password);
+            }
+            else
+            {
+                
+            }
+
+            if(id_user != 0 && id_user < 0)
+            {
+                TestPanel.Visible = false;
+            }
+            
         }
 
         private void passwordTextBox_TextChanged(object sender, EventArgs e)

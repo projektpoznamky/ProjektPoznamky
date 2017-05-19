@@ -111,7 +111,7 @@ namespace Poznamky
 
             string passwd = Hash(password);
 
-            string select_login = "SELECT id_user FROM users WHERE username = " + username + " AND password = " + passwd;
+            string select_login = "SELECT id_user FROM users WHERE username = '" + username + "' AND password = '" + passwd +"'";
 
             MySqlCommand cmd = new MySqlCommand(select_login, connection);
 
