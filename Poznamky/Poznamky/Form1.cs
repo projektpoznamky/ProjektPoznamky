@@ -25,6 +25,7 @@ namespace Poznamky
         private String chars;
         private int size;
         private string username, password;
+        private int id_user;
 
         //ArrayList pro uložení poznámek načtených z tlačítka SendNote_Button
         ArrayList notes = new ArrayList();
@@ -33,11 +34,12 @@ namespace Poznamky
         {
             
             InitializeComponent();
-            this.ActiveControl = usernameTextBox;
+            usernameTextBox.Select();
             db.db_connect(); //připoj se na dtb
             list_load(); //načti všechen obsah z dtb
             //Při načtení formu se schová tlačítko pro smazání a smazání všeho
             DeleteNote_Button.Visible = false;
+            WrongLogin_Label.Visible = false;
             
             this.usernameTextBox.TextAlign = HorizontalAlignment.Center;
             this.passwordTextBox.TextAlign = HorizontalAlignment.Center;
@@ -251,30 +253,54 @@ namespace Poznamky
 
         private void Login_Button_Click(object sender, EventArgs e)
         {
-            int id_user = -1;
+            id_user = -1;
             
 
             if ((username != null && username.Length < 51) && (password != null && password.Length < 41))
             {
                 id_user = db.db_login(username, password);
-                LabelReturn.Text = id_user.ToString();
+                
             }
             else
             {
                 
             }
 
-           /* if(id_user != 0 && id_user < 0)
+            if(id_user != 0 && !(id_user < 0))
             {
-                
-            }*/
-            
+                this.LoginPanel.Visible = false;
+            } else WrongLogin_Label.Visible = true;
+
         }
 
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
         {
             password = passwordTextBox.Text;
         }
+
+        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login_Button.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
+
+        private void usernameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login_Button.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
+
+       
+
+
     }
     }
 

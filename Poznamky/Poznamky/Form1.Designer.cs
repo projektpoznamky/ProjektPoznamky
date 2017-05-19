@@ -50,7 +50,8 @@
             this.ShowNote_ListBox = new System.Windows.Forms.ListBox();
             this.TextLengthCounter = new System.Windows.Forms.Label();
             this.LoginPanel = new System.Windows.Forms.Panel();
-            this.LabelReturn = new System.Windows.Forms.Label();
+            this.WrongLogin_Label = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.Login_Button = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
@@ -233,7 +234,7 @@
             // 
             // Close_Button
             // 
-            this.Close_Button.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Close_Button.BackColor = System.Drawing.Color.Transparent;
             this.Close_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Close_Button.BackgroundImage")));
             this.Close_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Close_Button.ForeColor = System.Drawing.SystemColors.Highlight;
@@ -298,7 +299,8 @@
             // LoginPanel
             // 
             this.LoginPanel.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.LoginPanel.Controls.Add(this.LabelReturn);
+            this.LoginPanel.Controls.Add(this.WrongLogin_Label);
+            this.LoginPanel.Controls.Add(this.label3);
             this.LoginPanel.Controls.Add(this.Login_Button);
             this.LoginPanel.Controls.Add(this.panel8);
             this.LoginPanel.Controls.Add(this.panel6);
@@ -308,15 +310,26 @@
             this.LoginPanel.Size = new System.Drawing.Size(897, 620);
             this.LoginPanel.TabIndex = 11;
             // 
-            // LabelReturn
+            // WrongLogin_Label
             // 
-            this.LabelReturn.AutoSize = true;
-            this.LabelReturn.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.LabelReturn.Location = new System.Drawing.Point(555, 405);
-            this.LabelReturn.Name = "LabelReturn";
-            this.LabelReturn.Size = new System.Drawing.Size(34, 13);
-            this.LabelReturn.TabIndex = 4;
-            this.LabelReturn.Text = "return";
+            this.WrongLogin_Label.AutoSize = true;
+            this.WrongLogin_Label.ForeColor = System.Drawing.Color.Red;
+            this.WrongLogin_Label.Location = new System.Drawing.Point(366, 274);
+            this.WrongLogin_Label.Name = "WrongLogin_Label";
+            this.WrongLogin_Label.Size = new System.Drawing.Size(151, 13);
+            this.WrongLogin_Label.TabIndex = 6;
+            this.WrongLogin_Label.Text = "Wrong username or password!";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label3.Location = new System.Drawing.Point(341, 475);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(196, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "If you have not registered yet click here!";
             // 
             // Login_Button
             // 
@@ -355,6 +368,7 @@
             this.passwordTextBox.TabIndex = 2;
             this.passwordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBox_TextChanged);
+            this.passwordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyDown);
             // 
             // panel9
             // 
@@ -384,9 +398,10 @@
             this.usernameTextBox.Location = new System.Drawing.Point(2, 11);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(203, 19);
-            this.usernameTextBox.TabIndex = 1;
+            this.usernameTextBox.TabIndex = 0;
             this.usernameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.usernameTextBox.TextChanged += new System.EventHandler(this.usernameTextBox_TextChanged);
+            this.usernameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usernameTextBox_KeyDown);
             // 
             // panel7
             // 
@@ -489,7 +504,8 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button Login_Button;
-        private System.Windows.Forms.Label LabelReturn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label WrongLogin_Label;
     }
 }
 
