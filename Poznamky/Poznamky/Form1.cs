@@ -39,6 +39,7 @@ namespace Poznamky
         {
             //Při načtení formu se schová tlačítko pro smazání a smazání všeho
             DeleteNote_Button.Visible = false;
+            panel1.Visible = false;
         }
 
 

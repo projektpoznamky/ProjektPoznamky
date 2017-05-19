@@ -47,6 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Close_Button = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -55,23 +56,28 @@
             // 
             // SendNote_Button
             // 
+            this.SendNote_Button.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.SendNote_Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SendNote_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SendNote_Button.Location = new System.Drawing.Point(683, 150);
+            this.SendNote_Button.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SendNote_Button.Location = new System.Drawing.Point(696, 161);
             this.SendNote_Button.Name = "SendNote_Button";
             this.SendNote_Button.Size = new System.Drawing.Size(138, 62);
             this.SendNote_Button.TabIndex = 0;
             this.SendNote_Button.Text = "Odeslat";
-            this.SendNote_Button.UseVisualStyleBackColor = true;
+            this.SendNote_Button.UseVisualStyleBackColor = false;
             this.SendNote_Button.Click += new System.EventHandler(this.SendNote_Button_Click);
             // 
             // DeleteNote_Button
             // 
+            this.DeleteNote_Button.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.DeleteNote_Button.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.DeleteNote_Button.Location = new System.Drawing.Point(696, 319);
             this.DeleteNote_Button.Name = "DeleteNote_Button";
             this.DeleteNote_Button.Size = new System.Drawing.Size(138, 62);
             this.DeleteNote_Button.TabIndex = 1;
             this.DeleteNote_Button.Text = "Smazat";
-            this.DeleteNote_Button.UseVisualStyleBackColor = true;
+            this.DeleteNote_Button.UseVisualStyleBackColor = false;
             this.DeleteNote_Button.Click += new System.EventHandler(this.DeleteNote_Button_Click);
             // 
             // NameTextBox
@@ -93,12 +99,14 @@
             // 
             // ShowNote_ListBox
             // 
+            this.ShowNote_ListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ShowNote_ListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ShowNote_ListBox.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.ShowNote_ListBox.FormattingEnabled = true;
             this.ShowNote_ListBox.ItemHeight = 15;
             this.ShowNote_ListBox.Location = new System.Drawing.Point(290, 73);
             this.ShowNote_ListBox.Name = "ShowNote_ListBox";
-            this.ShowNote_ListBox.Size = new System.Drawing.Size(306, 154);
+            this.ShowNote_ListBox.Size = new System.Drawing.Size(306, 150);
             this.ShowNote_ListBox.TabIndex = 5;
             this.ShowNote_ListBox.SelectedIndexChanged += new System.EventHandler(this.ShowNote_ListBox_SelectedIndexChanged);
             // 
@@ -113,12 +121,15 @@
             // 
             // UpdateNote_Button
             // 
+            this.UpdateNote_Button.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.UpdateNote_Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.UpdateNote_Button.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.UpdateNote_Button.Location = new System.Drawing.Point(696, 250);
             this.UpdateNote_Button.Name = "UpdateNote_Button";
             this.UpdateNote_Button.Size = new System.Drawing.Size(138, 62);
             this.UpdateNote_Button.TabIndex = 7;
             this.UpdateNote_Button.Text = "Aktualizovat";
-            this.UpdateNote_Button.UseVisualStyleBackColor = true;
+            this.UpdateNote_Button.UseVisualStyleBackColor = false;
             this.UpdateNote_Button.Click += new System.EventHandler(this.UpdateNote_Button_Click);
             // 
             // panel1
@@ -129,7 +140,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 724);
+            this.panel1.Size = new System.Drawing.Size(200, 646);
             this.panel1.TabIndex = 8;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -195,6 +206,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.panel4);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Location = new System.Drawing.Point(0, 0);
@@ -230,7 +242,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(925, 27);
+            this.panel2.Size = new System.Drawing.Size(697, 27);
             this.panel2.TabIndex = 9;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -249,13 +261,20 @@
             this.Close_Button.MouseLeave += new System.EventHandler(this.Close_Button_MouseLeave);
             this.Close_Button.MouseHover += new System.EventHandler(this.Close_Button_MouseHover);
             // 
+            // panel6
+            // 
+            this.panel6.Location = new System.Drawing.Point(200, 33);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(697, 613);
+            this.panel6.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1125, 724);
+            this.ClientSize = new System.Drawing.Size(897, 646);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.SendNote_Button);
             this.Controls.Add(this.panel1);
@@ -265,6 +284,7 @@
             this.Controls.Add(this.NoteTextBox);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.DeleteNote_Button);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -300,6 +320,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel6;
     }
 }
 
