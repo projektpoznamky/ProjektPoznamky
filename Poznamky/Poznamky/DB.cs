@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.Security.AccessControl;
 
 namespace Poznamky
 {
@@ -109,7 +110,7 @@ namespace Poznamky
         {
             db_connect();
 
-            string passwd = Hash(password);
+            string passwd = getSHA1(password);
 
             string select_login = "SELECT id_user FROM users WHERE username = '" + username + "' AND password = '" + passwd +"'";
 
@@ -143,7 +144,7 @@ namespace Poznamky
             
         }
 
-        public string Hash(string input)
+      /*  public string Hash(string input)
         {
             using (SHA1Managed sha1 = new SHA1Managed())
             {
@@ -158,6 +159,23 @@ namespace Poznamky
 
                 return sb.ToString();
             }
+        }*/
+
+
+
+        public string getSHA1(string text)
+        {
+            SHA1CryptoServiceProvider sh = new SHA1CryptoServiceProvider();
+            sh.ComputeHash(ASCIIEncoding.ASCII.GetBytes(text));
+            byte[] re = sh.Hash;
+            StringBuilder sb = new StringBuilder();
+
+            foreach(byte b in re)
+            {
+                sb.Append(b.ToString("x2"));
+            }
+            return sb.ToString();
+
         }
 
 
