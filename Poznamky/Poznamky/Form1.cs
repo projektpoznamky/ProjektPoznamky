@@ -289,6 +289,11 @@ namespace Poznamky
             }
         }
 
+        private void usernameTextBox_Click(object sender, EventArgs e)
+        {
+            this.usernameTextBox.Focus();
+        }
+
         private void usernameTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

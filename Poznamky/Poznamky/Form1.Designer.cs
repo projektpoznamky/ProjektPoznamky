@@ -400,6 +400,7 @@
             this.usernameTextBox.Size = new System.Drawing.Size(203, 19);
             this.usernameTextBox.TabIndex = 0;
             this.usernameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.usernameTextBox.Click += new System.EventHandler(this.usernameTextBox_Click);
             this.usernameTextBox.TextChanged += new System.EventHandler(this.usernameTextBox_TextChanged);
             this.usernameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usernameTextBox_KeyDown);
             // 
