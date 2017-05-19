@@ -34,8 +34,9 @@ namespace Poznamky
         {
             
             InitializeComponent();
-            usernameTextBox.Select();
+            
             db.db_connect(); //připoj se na dtb
+            usernameTextBox.Select();
             list_load(); //načti všechen obsah z dtb
             //Při načtení formu se schová tlačítko pro smazání a smazání všeho
             DeleteNote_Button.Visible = false;
@@ -52,7 +53,7 @@ namespace Poznamky
 
         public void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
 

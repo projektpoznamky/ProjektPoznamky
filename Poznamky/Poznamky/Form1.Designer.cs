@@ -299,11 +299,11 @@
             // LoginPanel
             // 
             this.LoginPanel.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.LoginPanel.Controls.Add(this.panel6);
             this.LoginPanel.Controls.Add(this.WrongLogin_Label);
             this.LoginPanel.Controls.Add(this.label3);
             this.LoginPanel.Controls.Add(this.Login_Button);
             this.LoginPanel.Controls.Add(this.panel8);
-            this.LoginPanel.Controls.Add(this.panel6);
             this.LoginPanel.Controls.Add(this.loginImage);
             this.LoginPanel.Location = new System.Drawing.Point(0, 26);
             this.LoginPanel.Name = "LoginPanel";
