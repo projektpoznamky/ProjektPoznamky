@@ -135,7 +135,7 @@ namespace Poznamky
             {
                 db_close();
                 return 0;
-            }
+            } 
             
 
             
