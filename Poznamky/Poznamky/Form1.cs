@@ -21,6 +21,9 @@ namespace Poznamky
         private DB db = new DB();
         private Poznamka note;
         private int location;
+        private int charNumber = 2000;
+        private String chars;
+        private int size;
 
         //ArrayList pro uložení poznámek načtených z tlačítka SendNote_Button
         ArrayList notes = new ArrayList();
@@ -31,15 +34,21 @@ namespace Poznamky
             InitializeComponent();
             db.db_connect(); //připoj se na dtb
             list_load(); //načti všechen obsah z dtb
+            //Při načtení formu se schová tlačítko pro smazání a smazání všeho
+            DeleteNote_Button.Visible = false;
+            this.ActiveControl = usernameTextBox;
+            this.usernameTextBox.TextAlign = HorizontalAlignment.Center;
+            this.passwordTextBox.TextAlign = HorizontalAlignment.Center;
+            this.passwordTextBox.PasswordChar = '*'; 
+
+            
         }
 
 
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            //Při načtení formu se schová tlačítko pro smazání a smazání všeho
-            DeleteNote_Button.Visible = false;
-            panel1.Visible = false;
+
         }
 
 
@@ -55,7 +64,27 @@ namespace Poznamky
         {
             //Zapisuje text napsaný do NoteTextBox-u do proměnné noteText
             noteText = NoteTextBox.Text;
+            NoteTextBox.Focus();
+
+
+
+            //Zařizuje počítání znaků do poznámky
+            chars = NoteTextBox.Text;
+            size  = chars.Length;
+            charNumber -= size;
+            TextLengthCounter.Text = charNumber.ToString();
+
+
+            if(charNumber < 1)
+            {
+                TextLengthCounter.Text = "Chyba";
+            }
+
+            charNumber = 2000;
+
         }
+
+
 
         private void SendNote_Button_Click(object sender, EventArgs e)
         {
@@ -195,7 +224,20 @@ namespace Poznamky
             this.Close_Button.BackColor = Color.Transparent;
         }
 
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Login_Button_MouseHover(object sender, EventArgs e)
+        {
+            this.Close_Button.BackColor = Color.AliceBlue;
+        }
     }
     }
 
