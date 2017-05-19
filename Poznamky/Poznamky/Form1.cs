@@ -24,6 +24,7 @@ namespace Poznamky
         private int charNumber = 2000;
         private String chars;
         private int size;
+        private string username, password;
 
         //ArrayList pro uložení poznámek načtených z tlačítka SendNote_Button
         ArrayList notes = new ArrayList();
@@ -237,6 +238,25 @@ namespace Poznamky
         private void Login_Button_MouseHover(object sender, EventArgs e)
         {
             this.Close_Button.BackColor = Color.AliceBlue;
+
+            if((username != null && username.Length < 51) && (password != null && password.Length < 41))
+            {
+                //metoda pro login
+            } else
+            {
+                //špatné přihlášení
+            }
+
+        }
+
+        private void usernameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            username = usernameTextBox.Text;
+        }
+
+        private void passwordTextBox_TextChanged(object sender, EventArgs e)
+        {
+            password = passwordTextBox.Text;
         }
     }
     }

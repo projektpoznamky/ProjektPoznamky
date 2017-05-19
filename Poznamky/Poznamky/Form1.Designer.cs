@@ -50,22 +50,22 @@
             this.ShowNote_ListBox = new System.Windows.Forms.ListBox();
             this.TextLengthCounter = new System.Windows.Forms.Label();
             this.LoginPanel = new System.Windows.Forms.Panel();
-            this.loginImage = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.usernameTextBox = new System.Windows.Forms.TextBox();
+            this.Login_Button = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.usernameTextBox = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.loginImage = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.Login_Button = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.TopBar.SuspendLayout();
             this.LoginPanel.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // SendNote_Button
@@ -306,45 +306,20 @@
             this.LoginPanel.Size = new System.Drawing.Size(897, 620);
             this.LoginPanel.TabIndex = 11;
             // 
-            // loginImage
+            // Login_Button
             // 
-            this.loginImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("loginImage.BackgroundImage")));
-            this.loginImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.loginImage.Location = new System.Drawing.Point(337, 112);
-            this.loginImage.Name = "loginImage";
-            this.loginImage.Size = new System.Drawing.Size(208, 154);
-            this.loginImage.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.usernameTextBox);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(337, 290);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(208, 31);
-            this.panel6.TabIndex = 0;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 30);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(208, 1);
-            this.panel7.TabIndex = 1;
-            // 
-            // usernameTextBox
-            // 
-            this.usernameTextBox.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.usernameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.usernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.usernameTextBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.usernameTextBox.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.usernameTextBox.Location = new System.Drawing.Point(2, 11);
-            this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(203, 19);
-            this.usernameTextBox.TabIndex = 1;
-            this.usernameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Login_Button.BackColor = System.Drawing.Color.Transparent;
+            this.Login_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Login_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Login_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Login_Button.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.Login_Button.Location = new System.Drawing.Point(397, 382);
+            this.Login_Button.Name = "Login_Button";
+            this.Login_Button.Size = new System.Drawing.Size(92, 36);
+            this.Login_Button.TabIndex = 2;
+            this.Login_Button.Text = "Login";
+            this.Login_Button.UseVisualStyleBackColor = false;
+            this.Login_Button.MouseHover += new System.EventHandler(this.Login_Button_MouseHover);
             // 
             // panel8
             // 
@@ -366,6 +341,7 @@
             this.passwordTextBox.Size = new System.Drawing.Size(201, 19);
             this.passwordTextBox.TabIndex = 2;
             this.passwordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBox_TextChanged);
             // 
             // panel9
             // 
@@ -376,6 +352,47 @@
             this.panel9.Size = new System.Drawing.Size(208, 1);
             this.panel9.TabIndex = 1;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.usernameTextBox);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Location = new System.Drawing.Point(337, 290);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(208, 31);
+            this.panel6.TabIndex = 0;
+            // 
+            // usernameTextBox
+            // 
+            this.usernameTextBox.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
+            this.usernameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.usernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.usernameTextBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.usernameTextBox.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.usernameTextBox.Location = new System.Drawing.Point(2, 11);
+            this.usernameTextBox.Name = "usernameTextBox";
+            this.usernameTextBox.Size = new System.Drawing.Size(203, 19);
+            this.usernameTextBox.TabIndex = 1;
+            this.usernameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.usernameTextBox.TextChanged += new System.EventHandler(this.usernameTextBox_TextChanged);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(0, 30);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(208, 1);
+            this.panel7.TabIndex = 1;
+            // 
+            // loginImage
+            // 
+            this.loginImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("loginImage.BackgroundImage")));
+            this.loginImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.loginImage.Location = new System.Drawing.Point(337, 112);
+            this.loginImage.Name = "loginImage";
+            this.loginImage.Size = new System.Drawing.Size(208, 154);
+            this.loginImage.TabIndex = 0;
+            // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.Highlight;
@@ -383,21 +400,6 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(200, 27);
             this.panel10.TabIndex = 1;
-            // 
-            // Login_Button
-            // 
-            this.Login_Button.BackColor = System.Drawing.Color.Transparent;
-            this.Login_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Login_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Login_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login_Button.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.Login_Button.Location = new System.Drawing.Point(397, 382);
-            this.Login_Button.Name = "Login_Button";
-            this.Login_Button.Size = new System.Drawing.Size(92, 36);
-            this.Login_Button.TabIndex = 2;
-            this.Login_Button.Text = "Login";
-            this.Login_Button.UseVisualStyleBackColor = false;
-            this.Login_Button.MouseHover += new System.EventHandler(this.Login_Button_MouseHover);
             // 
             // Form1
             // 
@@ -432,10 +434,10 @@
             this.panel5.PerformLayout();
             this.TopBar.ResumeLayout(false);
             this.LoginPanel.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
