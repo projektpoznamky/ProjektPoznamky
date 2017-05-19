@@ -257,16 +257,17 @@ namespace Poznamky
             if ((username != null && username.Length < 51) && (password != null && password.Length < 41))
             {
                 id_user = db.db_login(username, password);
+                LabelReturn.Text = id_user.ToString();
             }
             else
             {
                 
             }
 
-            if(id_user != 0 && id_user < 0)
+           /* if(id_user != 0 && id_user < 0)
             {
-                TestPanel.Visible = false;
-            }
+                
+            }*/
             
         }
 

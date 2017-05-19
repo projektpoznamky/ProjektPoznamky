@@ -59,7 +59,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.loginImage = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.TestPanel = new System.Windows.Forms.Panel();
+            this.LabelReturn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -298,7 +298,7 @@
             // LoginPanel
             // 
             this.LoginPanel.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.LoginPanel.Controls.Add(this.TestPanel);
+            this.LoginPanel.Controls.Add(this.LabelReturn);
             this.LoginPanel.Controls.Add(this.Login_Button);
             this.LoginPanel.Controls.Add(this.panel8);
             this.LoginPanel.Controls.Add(this.panel6);
@@ -404,13 +404,14 @@
             this.panel10.Size = new System.Drawing.Size(200, 27);
             this.panel10.TabIndex = 1;
             // 
-            // TestPanel
+            // LabelReturn
             // 
-            this.TestPanel.BackColor = System.Drawing.Color.Chartreuse;
-            this.TestPanel.Location = new System.Drawing.Point(614, 193);
-            this.TestPanel.Name = "TestPanel";
-            this.TestPanel.Size = new System.Drawing.Size(200, 100);
-            this.TestPanel.TabIndex = 3;
+            this.LabelReturn.AutoSize = true;
+            this.LabelReturn.Location = new System.Drawing.Point(555, 405);
+            this.LabelReturn.Name = "LabelReturn";
+            this.LabelReturn.Size = new System.Drawing.Size(34, 13);
+            this.LabelReturn.TabIndex = 4;
+            this.LabelReturn.Text = "return";
             // 
             // Form1
             // 
@@ -445,6 +446,7 @@
             this.panel5.PerformLayout();
             this.TopBar.ResumeLayout(false);
             this.LoginPanel.ResumeLayout(false);
+            this.LoginPanel.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -486,7 +488,7 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button Login_Button;
-        private System.Windows.Forms.Panel TestPanel;
+        private System.Windows.Forms.Label LabelReturn;
     }
 }
 
