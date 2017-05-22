@@ -135,7 +135,7 @@ namespace Poznamky
         {
             //Vytvoří nový objekt Poznamka a přidá ho do ArrayListu
             note = new Poznamka(name, noteText);
-            db.add_note_db(note);
+            db.add_note_db(note, id_user);
             notes.Clear();
             list();
         }
