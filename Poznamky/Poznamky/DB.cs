@@ -58,14 +58,14 @@ namespace Poznamky
 
 
 
-        public MySqlDataReader db_select_notes()
+        public MySqlDataReader db_select_notes(int id_user)
         {
             db_connect(); //připojit se
             command = connection.CreateCommand();
 
            // command.CommandText = "SELECT id_note, name_note, text_note, date_note FROM notes";
 
-            string select = "SELECT id_note, name_note, text_note, date_note FROM notes"; 
+            string select = "SELECT id_note, name_note, text_note, date_note FROM notes WHERE id_user = "+id_user; 
 
             MySqlCommand cmd = new MySqlCommand(select, connection); 
            MySqlDataReader reader = cmd.ExecuteReader();
