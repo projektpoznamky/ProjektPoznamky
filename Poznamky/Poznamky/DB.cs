@@ -28,7 +28,7 @@ namespace Poznamky
                 //připojit na local dtb
                 connection = new MySqlConnection("Server=10.0.7.17; Port=3306; Database=projektpoznamky; Uid=poznamky; Pwd=12345");
                 connection.Open(); //otevřít dtb
-        }
+        } 
         public void db_close()
         {   //ukončit komunikaci s databází
             connection.Close();
