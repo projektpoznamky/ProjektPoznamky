@@ -67,7 +67,7 @@ namespace Poznamky
 
             string select = "SELECT id_note, name_note, text_note, date_note FROM notes"; 
 
-            MySqlCommand cmd = new MySqlCommand(select, connection);
+            MySqlCommand cmd = new MySqlCommand(select, connection); 
            MySqlDataReader reader = cmd.ExecuteReader();
             //nesmím zavřít dtb jinak by se nevykonal reader v Form1.cs
             
