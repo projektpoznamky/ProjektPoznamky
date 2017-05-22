@@ -340,6 +340,16 @@ namespace Poznamky
             ListNotes.Visible = false;
         }
 
+        private void Logout_Button_MouseHover(object sender, EventArgs e)
+        {
+            this.Logout_Button.BackgroundImage = global::Poznamky.Properties.Resources.logout;
+        }
+
+        private void Logout_Button_MouseLeave(object sender, EventArgs e)
+        {
+            this.Logout_Button.BackgroundImage = global::Poznamky.Properties.Resources.logout1;
+        }
+
         private void LogoPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

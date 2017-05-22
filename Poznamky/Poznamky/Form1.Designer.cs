@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.UpdateNote_Button = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.TopBar = new System.Windows.Forms.Panel();
             this.NameTextBox = new System.Windows.Forms.TextBox();
@@ -43,10 +42,6 @@
             this.ShowNote_ListBox = new System.Windows.Forms.ListBox();
             this.TextLengthCounter = new System.Windows.Forms.Label();
             this.Default = new System.Windows.Forms.Panel();
-            this.ListNotes = new System.Windows.Forms.Panel();
-            this.EditNote = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.LoginPanel = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
@@ -57,21 +52,17 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.loginImage = new System.Windows.Forms.Panel();
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.LabelUsername = new System.Windows.Forms.Label();
             this.Close_Button = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.Logout_Button = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.MyNotes_Button = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ListNotes = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.EditNote = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -81,19 +72,28 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.Logout_Button = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.MyNotes_Button = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.loginImage = new System.Windows.Forms.Panel();
             this.panel5.SuspendLayout();
             this.Default.SuspendLayout();
-            this.ListNotes.SuspendLayout();
-            this.EditNote.SuspendLayout();
             this.LoginPanel.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.LogoPanel.SuspendLayout();
+            this.ListNotes.SuspendLayout();
+            this.EditNote.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel14.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // SendNote_Button
@@ -151,15 +151,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 27);
             this.panel5.TabIndex = 10;
-            // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel4.Location = new System.Drawing.Point(63, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(26, 23);
-            this.panel4.TabIndex = 10;
             // 
             // label2
             // 
@@ -240,48 +231,6 @@
             this.Default.Name = "Default";
             this.Default.Size = new System.Drawing.Size(697, 620);
             this.Default.TabIndex = 12;
-            // 
-            // ListNotes
-            // 
-            this.ListNotes.BackgroundImage = global::Poznamky.Properties.Resources.menu;
-            this.ListNotes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ListNotes.Controls.Add(this.label4);
-            this.ListNotes.Location = new System.Drawing.Point(0, 0);
-            this.ListNotes.Name = "ListNotes";
-            this.ListNotes.Size = new System.Drawing.Size(697, 620);
-            this.ListNotes.TabIndex = 0;
-            // 
-            // EditNote
-            // 
-            this.EditNote.BackgroundImage = global::Poznamky.Properties.Resources.menu;
-            this.EditNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EditNote.Controls.Add(this.button5);
-            this.EditNote.Controls.Add(this.button1);
-            this.EditNote.Controls.Add(this.textBox2);
-            this.EditNote.Controls.Add(this.textBox1);
-            this.EditNote.Location = new System.Drawing.Point(0, 0);
-            this.EditNote.Name = "EditNote";
-            this.EditNote.Size = new System.Drawing.Size(697, 620);
-            this.EditNote.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(6, 33);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(679, 534);
-            this.textBox2.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(6, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(679, 20);
-            this.textBox1.TabIndex = 0;
             // 
             // LoginPanel
             // 
@@ -400,15 +349,6 @@
             this.panel9.Size = new System.Drawing.Size(208, 1);
             this.panel9.TabIndex = 1;
             // 
-            // loginImage
-            // 
-            this.loginImage.BackgroundImage = global::Poznamky.Properties.Resources.loginuser1;
-            this.loginImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.loginImage.Location = new System.Drawing.Point(337, 112);
-            this.loginImage.Name = "loginImage";
-            this.loginImage.Size = new System.Drawing.Size(208, 154);
-            this.loginImage.TabIndex = 0;
-            // 
             // LogoPanel
             // 
             this.LogoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(135)))), ((int)(((byte)(255)))));
@@ -447,6 +387,81 @@
             this.Close_Button.MouseLeave += new System.EventHandler(this.Close_Button_MouseLeave);
             this.Close_Button.MouseHover += new System.EventHandler(this.Close_Button_MouseHover);
             // 
+            // ListNotes
+            // 
+            this.ListNotes.BackgroundImage = global::Poznamky.Properties.Resources.menu;
+            this.ListNotes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ListNotes.Controls.Add(this.label4);
+            this.ListNotes.Location = new System.Drawing.Point(0, 0);
+            this.ListNotes.Name = "ListNotes";
+            this.ListNotes.Size = new System.Drawing.Size(697, 620);
+            this.ListNotes.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(52, 35);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "label4";
+            // 
+            // EditNote
+            // 
+            this.EditNote.BackgroundImage = global::Poznamky.Properties.Resources.menu;
+            this.EditNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EditNote.Controls.Add(this.button5);
+            this.EditNote.Controls.Add(this.button1);
+            this.EditNote.Controls.Add(this.textBox2);
+            this.EditNote.Controls.Add(this.textBox1);
+            this.EditNote.Location = new System.Drawing.Point(0, 0);
+            this.EditNote.Name = "EditNote";
+            this.EditNote.Size = new System.Drawing.Size(697, 620);
+            this.EditNote.TabIndex = 1;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(434, 583);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(111, 24);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Save";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(177, 583);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 24);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Location = new System.Drawing.Point(6, 33);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(679, 534);
+            this.textBox2.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBox1.Location = new System.Drawing.Point(6, 7);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(679, 20);
+            this.textBox1.TabIndex = 0;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
@@ -461,136 +476,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 646);
             this.panel1.TabIndex = 8;
-            // 
-            // Logout_Button
-            // 
-            this.Logout_Button.BackColor = System.Drawing.Color.Transparent;
-            this.Logout_Button.BackgroundImage = global::Poznamky.Properties.Resources.logout1;
-            this.Logout_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Logout_Button.FlatAppearance.BorderSize = 0;
-            this.Logout_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Logout_Button.ForeColor = System.Drawing.Color.Transparent;
-            this.Logout_Button.Location = new System.Drawing.Point(56, 606);
-            this.Logout_Button.Name = "Logout_Button";
-            this.Logout_Button.Size = new System.Drawing.Size(33, 37);
-            this.Logout_Button.TabIndex = 13;
-            this.Logout_Button.UseVisualStyleBackColor = false;
-            this.Logout_Button.Click += new System.EventHandler(this.Logout_Button_Click);
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.Transparent;
-            this.panel10.BackgroundImage = global::Poznamky.Properties.Resources.settings11;
-            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel10.Location = new System.Drawing.Point(117, 606);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(40, 37);
-            this.panel10.TabIndex = 12;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::Poznamky.Properties.Resources.dan;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.Location = new System.Drawing.Point(0, 48);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 153);
-            this.panel2.TabIndex = 11;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.MyNotes_Button);
-            this.panel3.Location = new System.Drawing.Point(0, 189);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 297);
-            this.panel3.TabIndex = 10;
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(3, 226);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(194, 44);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Notes";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(3, 176);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(194, 44);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Notes";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(3, 126);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(194, 44);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Notes";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // MyNotes_Button
-            // 
-            this.MyNotes_Button.BackColor = System.Drawing.Color.Transparent;
-            this.MyNotes_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.MyNotes_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
-            this.MyNotes_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MyNotes_Button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.MyNotes_Button.ForeColor = System.Drawing.Color.Azure;
-            this.MyNotes_Button.Location = new System.Drawing.Point(3, 77);
-            this.MyNotes_Button.Name = "MyNotes_Button";
-            this.MyNotes_Button.Size = new System.Drawing.Size(194, 44);
-            this.MyNotes_Button.TabIndex = 10;
-            this.MyNotes_Button.Text = "My Notes";
-            this.MyNotes_Button.UseVisualStyleBackColor = false;
-            this.MyNotes_Button.Click += new System.EventHandler(this.button1_Click);
-            this.MyNotes_Button.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MyNotes_Button_MouseDown);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(177, 583);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 24);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(434, 583);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(111, 24);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Save";
-            this.button5.UseVisualStyleBackColor = false;
             // 
             // panel11
             // 
@@ -710,14 +595,131 @@
             this.button10.Text = "My Notes";
             this.button10.UseVisualStyleBackColor = false;
             // 
-            // label4
+            // Logout_Button
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(52, 35);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "label4";
+            this.Logout_Button.BackColor = System.Drawing.Color.Transparent;
+            this.Logout_Button.BackgroundImage = global::Poznamky.Properties.Resources.logout1;
+            this.Logout_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Logout_Button.FlatAppearance.BorderSize = 0;
+            this.Logout_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Logout_Button.ForeColor = System.Drawing.Color.Transparent;
+            this.Logout_Button.Location = new System.Drawing.Point(56, 606);
+            this.Logout_Button.Name = "Logout_Button";
+            this.Logout_Button.Size = new System.Drawing.Size(33, 37);
+            this.Logout_Button.TabIndex = 13;
+            this.Logout_Button.UseVisualStyleBackColor = false;
+            this.Logout_Button.Click += new System.EventHandler(this.Logout_Button_Click);
+            this.Logout_Button.MouseLeave += new System.EventHandler(this.Logout_Button_MouseLeave);
+            this.Logout_Button.MouseHover += new System.EventHandler(this.Logout_Button_MouseHover);
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Transparent;
+            this.panel10.BackgroundImage = global::Poznamky.Properties.Resources.settings11;
+            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel10.Location = new System.Drawing.Point(117, 606);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(40, 37);
+            this.panel10.TabIndex = 12;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::Poznamky.Properties.Resources.dan;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Location = new System.Drawing.Point(0, 48);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 153);
+            this.panel2.TabIndex = 11;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.button4);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.MyNotes_Button);
+            this.panel3.Location = new System.Drawing.Point(0, 189);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 297);
+            this.panel3.TabIndex = 10;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button4.Location = new System.Drawing.Point(3, 226);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(194, 44);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Notes";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button3.Location = new System.Drawing.Point(3, 176);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(194, 44);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Notes";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Location = new System.Drawing.Point(3, 126);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(194, 44);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Notes";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // MyNotes_Button
+            // 
+            this.MyNotes_Button.BackColor = System.Drawing.Color.Transparent;
+            this.MyNotes_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.MyNotes_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.MyNotes_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MyNotes_Button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.MyNotes_Button.ForeColor = System.Drawing.Color.Azure;
+            this.MyNotes_Button.Location = new System.Drawing.Point(3, 77);
+            this.MyNotes_Button.Name = "MyNotes_Button";
+            this.MyNotes_Button.Size = new System.Drawing.Size(194, 44);
+            this.MyNotes_Button.TabIndex = 10;
+            this.MyNotes_Button.Text = "My Notes";
+            this.MyNotes_Button.UseVisualStyleBackColor = false;
+            this.MyNotes_Button.Click += new System.EventHandler(this.button1_Click);
+            this.MyNotes_Button.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MyNotes_Button_MouseDown);
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel4.Location = new System.Drawing.Point(63, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(26, 23);
+            this.panel4.TabIndex = 10;
+            // 
+            // loginImage
+            // 
+            this.loginImage.BackgroundImage = global::Poznamky.Properties.Resources.loginuser1;
+            this.loginImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.loginImage.Location = new System.Drawing.Point(337, 112);
+            this.loginImage.Name = "loginImage";
+            this.loginImage.Size = new System.Drawing.Size(208, 154);
+            this.loginImage.TabIndex = 0;
             // 
             // Form1
             // 
@@ -726,6 +728,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(897, 646);
+            this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.LogoPanel);
             this.Controls.Add(this.TopBar);
             this.Controls.Add(this.Default);
@@ -740,7 +743,6 @@
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.DeleteNote_Button);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.LoginPanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
@@ -750,10 +752,6 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.Default.ResumeLayout(false);
-            this.ListNotes.ResumeLayout(false);
-            this.ListNotes.PerformLayout();
-            this.EditNote.ResumeLayout(false);
-            this.EditNote.PerformLayout();
             this.LoginPanel.ResumeLayout(false);
             this.LoginPanel.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -762,10 +760,14 @@
             this.panel8.PerformLayout();
             this.LogoPanel.ResumeLayout(false);
             this.LogoPanel.PerformLayout();
+            this.ListNotes.ResumeLayout(false);
+            this.ListNotes.PerformLayout();
+            this.EditNote.ResumeLayout(false);
+            this.EditNote.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
