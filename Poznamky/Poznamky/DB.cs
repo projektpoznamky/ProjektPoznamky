@@ -65,7 +65,7 @@ namespace Poznamky
 
            // command.CommandText = "SELECT id_note, name_note, text_note, date_note FROM notes";
 
-            string select = "SELECT id_note, name_note, text_note, date_note FROM notes";
+            string select = "SELECT id_note, name_note, text_note, date_note FROM notes"; 
 
             MySqlCommand cmd = new MySqlCommand(select, connection);
            MySqlDataReader reader = cmd.ExecuteReader();
