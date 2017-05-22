@@ -37,7 +37,7 @@ namespace Poznamky
 
 
 
-        public void add_note_db(Poznamka note)
+        public void add_note_db(Poznamka note, int id_user)
         { //přidat novou poznámku do databáze
 
             db_connect(); //pro každý nový příkaz musí být nové připojení do dtb
@@ -48,7 +48,7 @@ namespace Poznamky
             String name_note = note.getName();
             String text_note = note.getText();
 
-            command.CommandText = "INSERT INTO notes(name_note, text_note) VALUES('"+name_note+"', '"+text_note+"')"; //znění příkazu
+            command.CommandText = "INSERT INTO notes(name_note, text_note, id_user) VALUES('"+name_note+"', '"+text_note+"', "+id_user+")"; //znění příkazu
 
             command.ExecuteNonQuery(); //provést
 

@@ -34,15 +34,14 @@ namespace Poznamky
         {
             
             InitializeComponent();
-            usernameTextBox.Select();
+            
             db.db_connect(); //připoj se na dtb
             list_load(); //načti všechen obsah z dtb
             //Při načtení formu se schová tlačítko pro smazání a smazání všeho
             DeleteNote_Button.Visible = false;
             WrongLogin_Label.Visible = false;
-            
-            this.usernameTextBox.TextAlign = HorizontalAlignment.Center;
-            this.passwordTextBox.TextAlign = HorizontalAlignment.Center;
+            usernameTextBox.Focus();
+            usernameTextBox.Select();
             this.passwordTextBox.PasswordChar = '*'; 
 
             
