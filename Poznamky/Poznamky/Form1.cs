@@ -36,6 +36,7 @@ namespace Poznamky
             InitializeComponent();
             
             db.db_connect(); //připoj se na dtb
+            usernameTextBox.Select();
             list_load(); //načti všechen obsah z dtb
             //Při načtení formu se schová tlačítko pro smazání a smazání všeho
             DeleteNote_Button.Visible = false;
@@ -51,7 +52,7 @@ namespace Poznamky
 
         public void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
 
@@ -197,21 +198,6 @@ namespace Poznamky
 
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Close_Button_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -227,27 +213,15 @@ namespace Poznamky
             this.Close_Button.BackColor = Color.Transparent;
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Login_Button_MouseHover(object sender, EventArgs e)
         {
             this.Close_Button.BackColor = Color.AliceBlue;
-
-            
-
         }
 
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
         {
             username = usernameTextBox.Text;
+            
         }
 
         private void Login_Button_Click(object sender, EventArgs e)
@@ -259,8 +233,7 @@ namespace Poznamky
             {
                 id_user = db.db_login(username, password);
                 
-            }
-            else
+            } else
             {
                 
             }
@@ -285,6 +258,12 @@ namespace Poznamky
                 e.SuppressKeyPress = true;
                 e.Handled = true;
             }
+        }
+
+        private void usernameTextBox_Click(object sender, EventArgs e)
+        {
+            this.usernameTextBox.Focus();
+            
         }
 
         private void usernameTextBox_KeyDown(object sender, KeyEventArgs e)
