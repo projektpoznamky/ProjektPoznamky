@@ -31,6 +31,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
@@ -80,6 +84,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -94,6 +99,57 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginuser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topbar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topbar1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginuser1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topbar11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

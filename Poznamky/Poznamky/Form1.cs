@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Poznamky
 {
@@ -26,6 +27,13 @@ namespace Poznamky
         private int size;
         private string username, password;
         private int id_user;
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
 
         //ArrayList pro uložení poznámek načtených z tlačítka SendNote_Button
         ArrayList notes = new ArrayList();
@@ -37,15 +45,41 @@ namespace Poznamky
             
             db.db_connect(); //připoj se na dtb
             usernameTextBox.Select();
-            list_load(); //načti všechen obsah z dtb
+            
             //Při načtení formu se schová tlačítko pro smazání a smazání všeho
             DeleteNote_Button.Visible = false;
             WrongLogin_Label.Visible = false;
             usernameTextBox.Focus();
             usernameTextBox.Select();
-            this.passwordTextBox.PasswordChar = '*'; 
+            this.passwordTextBox.PasswordChar = '*';
 
-            
+            this.Close_Button.FlatStyle = FlatStyle.Flat;
+            this.Close_Button.FlatAppearance.MouseOverBackColor = Color.Red;
+            this.Close_Button.FlatAppearance.MouseDownBackColor = Color.Red;
+
+            this.MyNotes_Button.FlatStyle = FlatStyle.Flat;
+            //this.MyNotes_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            this.MyNotes_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
+
+            this.button2.FlatStyle = FlatStyle.Flat;
+            //this.button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            this.button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
+
+            this.button3.FlatStyle = FlatStyle.Flat;
+            //this.button3.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            this.button3.FlatAppearance.MouseDownBackColor = Color.Transparent;
+
+            this.button4.FlatStyle = FlatStyle.Flat;
+            //this.button4.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            this.button4.FlatAppearance.MouseDownBackColor = Color.Transparent;
+
+            this.Logout_Button.FlatStyle = FlatStyle.Flat;
+            this.Logout_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            this.Logout_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
+
+
+
+
         }
 
 
@@ -102,7 +136,7 @@ namespace Poznamky
             MySqlDataReader reader;
             
             
-            reader = db.db_select_notes();
+            reader = db.db_select_notes(id_user);
 
             while (reader.Read())
             {
@@ -121,7 +155,7 @@ namespace Poznamky
         {
             ShowNote_ListBox.Items.Clear(); //vyčisti zobrazené položky
             MySqlDataReader reader;
-            reader = db.db_select_notes(); //získej výpis všeho
+            reader = db.db_select_notes(id_user); //získej výpis všeho
 
             while (reader.Read()){
                 //vypiš vše
@@ -231,15 +265,14 @@ namespace Poznamky
 
             if ((username != null && username.Length < 51) && (password != null && password.Length < 41))
             {
-                id_user = db.db_login(username, password);
-                
-            } else
-            {
-                
+                id_user = db.db_login(username, password); 
             }
 
             if(id_user != 0 && !(id_user < 0))
             {
+                this.WrongLogin_Label.Visible = false;
+                LabelUsername.Text = username;
+                list_load(); //načti všechen obsah z dtb
                 this.LoginPanel.Visible = false;
             } else WrongLogin_Label.Visible = true;
 
@@ -266,6 +299,20 @@ namespace Poznamky
             
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            EditNote.Visible = true;
+            ListNotes.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            list();
+            EditNote.Visible = false;
+            ListNotes.Visible = true;
+        }
+
         private void usernameTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -276,7 +323,36 @@ namespace Poznamky
             }
         }
 
-       
+        private void Logout_Button_Click(object sender, EventArgs e)
+        {
+            this.LoginPanel.Visible = true;
+
+        }
+
+        private void MyNotes_Button_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            EditNote.Visible = true;
+            ListNotes.Visible = false;
+        }
+
+        private void LogoPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+
+
+
+
 
 
     }
